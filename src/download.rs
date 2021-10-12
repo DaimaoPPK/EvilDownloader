@@ -95,6 +95,6 @@ impl fmt::Display for URL{
 
 impl fmt::Display for Summary{
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result{
-        write!(f, "Url: {}\nFilename: {}\nStatus Code: {}", self.url, self.filename, self.status)
+        write!(f, "Url: {}\nFilename: {}\nStatus Code: {}\n", self.url, self.filename, self.status)
     }
 }
