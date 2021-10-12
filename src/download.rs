@@ -68,7 +68,7 @@ impl Download{
     pub fn download(&self) -> Result<Summary, minreq::Error>{
         let filename = self.url.segments().last().unwrap().clone();
         let response = minreq::get(&self.url.url).send()?;
-        let mut file = match File::create(filename.as_str()) {
+        let mut file = match File::create(format!{"{}/{}", self.path, filename}) {
             Err(err) => panic!("couldn't create {}", err),
             Ok(file) => file,
         };
